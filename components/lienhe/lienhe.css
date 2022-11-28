@@ -1,0 +1,78 @@
+@import "../../assets/css/variables.css";
+
+/* contact */
+.contact-address {
+  padding: 40px 0;
+}
+
+.contact-address__content {
+  gap: 10px;
+  padding: 10px 0;
+}
+
+.contact-address__icon {
+  padding: 10px;
+  font-size: 1.2rem;
+  background-color: var(--primary-color);
+  color: var(--white-color);
+}
+
+.contact-address__title {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.contact-address__text {
+  font-size: 1rem;
+}
+
+.contact-address__phone {
+  font-weight: 600;
+  color: var(--black-color);
+}
+
+.contact-address__phone:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.contact-address__text a {
+  color: var(--black-color);
+}
+
+.contact-address__text a:hover {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.contact-address__text p {
+  margin-bottom: 0;
+}
+
+.form-control {
+  background-color: var(--white-background);
+  box-shadow: inset 0 1px 2px var(--shadow-black);
+}
+
+.form-control:focus {
+  background-color: var(--white-background);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075),
+    0 0 8px rgba(248, 183, 66, 0.6);
+}
+
+.contact-form__btn {
+  border: none;
+  font-weight: 600;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  padding: 6px 0;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.9;
+  box-shadow: inset 0 1px 2px var(--shadow-black);
+}
+
+.contact-form__btn:hover {
+  opacity: 1;
+  box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.2);
+}

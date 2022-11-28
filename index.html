@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flickity@2/dist/flickity.min.css"
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/header-footer.css" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Trang Chủ</title>
+  </head>
+  <body data-key="0">
+    <header id="header">
+      <div class="header-top hide-tablet">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="d-flex justify-content-between header-top__text">
+                <div class="d-flex header-top__left">
+                  <div class="d-flex align-items-center header-top__group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>319 - C16 Lý Thường Kiệt, P.15, Q.11, Tp.HCM</span>
+                  </div>
+                  <div class="d-flex align-items-center header-top__group">
+                    <i class="fa-solid fa-phone"></i>
+                    <a class="header-phone" href="tel:+0947468740"
+                      >0947468740</a
+                    >
+                  </div>
+                </div>
+                <div class="header-top__right">
+                  <a
+                    class="d-inline-block"
+                    href="#"
+                    target="_blank"
+                    title="follow on facebook"
+                    rel="noopener noreferrer"
+                    ><i class="fa-brands fa-facebook-f"></i
+                  ></a>
+                  <a
+                    class="d-inline-block"
+                    href="#"
+                    target="_blank"
+                    title="follow on instagram"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-brands fa-instagram"></i
+                  ></a>
+                  <a
+                    class="d-inline-block"
+                    href="#"
+                    target="_blank"
+                    title="follow on twitter"
+                    rel="noopener noreferrer"
+                    ><i class="fa-brands fa-twitter"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div
+                class="d-flex justify-content-between align-items-center header-center__box"
+              >
+                <button class="header-nav__list">
+                  <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="index.html" class="header-center__logo">
+                  FaceToFace
+                </a>
+                <div
+                  class="position-relative d-flex header-center__group hide-tablet"
+                >
+                  <input type="text" placeholder="Tìm kiếm..." class="search" />
+                  <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <ul
+                    class="position-absolute w-100 header-list__search d-none"
+                  ></ul>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-center header-center__icons"
+                >
+                  <button
+                    class="position-relative header-center__user hide-tablet"
+                  >
+                    <i class="fa-solid fa-user"></i>
+                    <div class="position-absolute header-center__list">
+                      <a
+                        class="d-inline-block text-nowrap w-100 header-center__item"
+                        href="./components/login/dangnhap.html"
+                        >Đăng Nhập</a
+                      >
+                      <a
+                        class="d-inline-block text-nowrap w-100 header-center__item"
+                        href="./components/register/dangky.html"
+                        >Đăng Ký</a
+                      >
+                      <a
+                        class="d-inline-block text-nowrap w-100 header-center__item"
+                        href="./components/user/user.html"
+                        >Thông Tin Người Dùng</a
+                      >
+                      <span
+                        id="header-logout"
+                        class="d-inline-block text-nowrap w-100 header-center__item"
+                        >Đăng Xuất</span
+                      >
+                    </div>
+                  </button>
+                  <a
+                    class="position-relative header-center__heart hide-tablet"
+                    href="components/yeuthich/whishlist.html"
+                  >
+                    <i class="fa-solid fa-heart"></i>
+                    <span
+                      class="position-absolute d-none align-items-center justify-content-center count-like"
+                      >0</span
+                    >
+                  </a>
+                  <div class="position-relative header-group">
+                    <a
+                      class="d-flex position-relative justify-content-center header-center__cart"
+                      href="components/giohang/giohang.html"
+                      title="giỏ hàng"
+                    >
+                      <span class="position-relative text-center header-count"
+                        >0</span
+                      >
+                    </a>
+                    <div
+                      class="position-absolute header-center__show hide-tablet"
+                    >
+                      <span class="d-inline-block text-left header-list__empty"
+                        >Chưa có sản phẩm trong giỏ hàng</span
+                      >
+                      <div class="header-cart__box d-none">
+                        <ul class="header-cart__list"></ul>
+                        <div class="header-cart__total">
+                          Tổng phụ: <span>1,000,000đ</span>
+                        </div>
+                        <div class="header-cart__btn">
+                          <a
+                            href="components/giohang/giohang.html"
+                            class="text-center d-inline-block"
+                            >Xem Giỏ Hàng</a
+                          >
+                          <a
+                            href="components/thanhtoan/thanhtoan.html"
+                            class="text-center d-inline-block mt-2"
+                            >Thanh Toán</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom hide-tablet">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <nav class="header-nav">
+                <ul class="nav justify-content-center">
+                  <li class="nav-item">
+                    <a href="index.html" class="text-uppercase nav-link"
+                      >Trang Chủ</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="./components/gioithieu/gioithieu.html"
+                      class="text-uppercase nav-link"
+                      >Giới Thiệu</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="./components/sanpham/donghonam.html"
+                      class="text-uppercase nav-link"
+                      >Đồng Hồ Nam</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="./components/sanpham/donghonu.html"
+                      class="text-uppercase nav-link"
+                      >Đồng Hồ Nữ</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="./components/blogs/blogs.html"
+                      class="text-uppercase nav-link"
+                      >Blogs</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="./components/lienhe/lienhe.html"
+                      class="text-uppercase nav-link active"
+                      >Liên Hệ</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="position-fixed h-100 tablet-nav">
+        <div class="position-relative d-flex header-center__group">
+          <input type="text" placeholder="Tìm kiếm..." class="search" />
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <ul class="position-absolute w-100 header-list__search d-none"></ul>
+        </div>
+        <nav class="nav flex-column nav-mobile">
+          <a class="nav-link active" href="index.html">Trang Chủ</a>
+          <a class="nav-link" href="./components/gioithieu/gioithieu.html"
+            >Giới Thiệu</a
+          >
+          <a class="nav-link" href="./components/sanpham/donghonam.html"
+            >Đồng Hồ Nam</a
+          >
+          <a class="nav-link" href="./components/sanpham/donghonu.html"
+            >Đồng Hồ Nữ</a
+          >
+          <a class="nav-link" href="./components/blogs/blogs.html">Blogs</a>
+          <a class="nav-link" href="./components/lienhe/lienhe.html">Liên Hệ</a>
+        </nav>
+        <div class="d-flex align-items-center tablet-icons">
+          <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="position-fixed w-100 h-100 tablet-overlay">
+        <i class="position-absolute fa-solid fa-xmark"></i>
+      </div>
+    </header>
+    <main id="home">
+      <div class="body_header">
+        <div class="carousel position-relative slider-main">
+          <div class="carousel-cell w-100 slider-main__item">
+            <div class="position-absolute w-100 h-100 slider-img overlay">
+              <img
+                class="position-relative"
+                src="./assets/images/home/trangchu_title1.jpg"
+                alt=""
+              />
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-lg-6">
+                  <div class="home-slider">
+                    <div
+                      class="position-relative w-100 h-100 d-flex align-items-center justify-content-center home-slider__item"
+                    >
+                      <div class="slider-text">
+                        <span>Mona Watch 1</span>
+                        <h1 class="slider-text__title">Đồng hồ Classico</h1>
+                        <p>
+                          Cùng với sự phát triển không ngừng của thời trang thế
+                          giới, rất nhiều thương hiệu cho ra đời những mẫu đồng
+                          hồ nam chính hãng đa dạng về phong cách, kiểu dáng,
+                          màu sắc, kích cỡ…
+                        </p>
+                        <button class="slider-text__btn mt-2">
+                          Xem sản phẩm
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-cell w-100 slider-main__item">
+            <div class="position-absolute w-100 h-100 slider-img overlay">
+              <img
+                class="position-relative"
+                src="./assets/images/home/trangchu_title2.jpg"
+                alt=""
+              />
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-md-8 col-lg-6">
+                  <div class="home-slider">
+                    <div
+                      class="position-relative w-100 h-100 d-flex align-items-center justify-content-center home-slider__item"
+                    >
+                      <div class="slider-text">
+                        <span>Mona Watch 2</span>
+                        <h1 class="slider-text__title">Đồng hồ Classico</h1>
+                        <p>
+                          Cùng với sự phát triển không ngừng của thời trang thế
+                          giới, rất nhiều thương hiệu cho ra đời những mẫu đồng
+                          hồ nam chính hãng đa dạng về phong cách, kiểu dáng,
+                          màu sắc, kích cỡ…
+                        </p>
+                        <button class="text-uppercase slider-text__btn mt-2">
+                          Xem sản phẩm
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container body_body">
+        <div class="row body_box--first">
+          <div class="col-12 col-md-6 my-4">
+            <div
+              class="position-relative d-flex align-items-start flex-column justify-content-center animated__loader animated__loader--top body_box overlay"
+            >
+              <div class="d-flex flex-column position-relative body_content">
+                <p>Xu hướng 2022</p>
+                <small class="d-inline-block body_border"></small>
+                <h2>ĐỒNG HỒ NAM</h2>
+              </div>
+              <a
+                href="components/sanpham/donghonam.html"
+                class="position-absolute w-100 h-100 home-bg__male"
+              ></a>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 my-4">
+            <div
+              class="position-relative d-flex align-items-start flex-column justify-content-center animated__loader animated__loader--top body_box overlay"
+            >
+              <div class="d-flex flex-column position-relative body_content">
+                <p>Xu hướng 2022</p>
+                <small class="d-inline-block body_border"></small>
+                <h2>ĐỒNG HỒ NỮ</h2>
+              </div>
+              <a
+                href="components/sanpham/donghonu.html"
+                class="position-absolute w-100 h-100 home-bg__female"
+              ></a>
+            </div>
+          </div>
+        </div>
+        <div class="row my-5 product-animation--first">
+          <div class="col-6 mb-4">
+            <h3 class="home-product__title">Sản phẩm bán chạy</h3>
+          </div>
+          <div class="col-6 mb-4">
+            <div
+              class="d-flex justify-content-end align-items-center h-100 home-btn__click"
+            >
+              <i class="fa-solid fa-arrow-left-long home-btn__prev"></i>
+              <i class="fa-solid fa-arrow-right-long home-btn__next"></i>
+            </div>
+          </div>
+          <div class="col-12">
+            <div class="w-100 carousel">
+              <div class="carousel-cell my-2">
+                <div
+                  class="d-flex flex-column position-relative product"
+                  data-code="sp005"
+                >
+                  <span
+                    class="position-absolute d-flex justify-content-center align-items-center product_discount"
+                  >
+                    -29%
+                  </span>
+                  <div class="position-relative product_img">
+                    <img src="./assets/images/product/Classico4.png" alt="" />
+                    <button
+                      class="position-absolute product_icon"
+                      data-code="sp005"
+                    >
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="d-flex flex-column align-items-center product_price"
+                  >
+                    <h5 class="product_name">Classico 4</h5>
+                    <span class="w-100 d-flex product_reduce">
+                      <span class="price_sale">700.000đ</span>
+                      <span>500.000đ</span>
+                    </span>
+                    <button class="text-center product-btn" data-code="sp005">
+                      THÊM VÀO GIỎ
+                    </button>
+                    <a
+                      href="#"
+                      class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                      >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-cell my-2">
+                <div
+                  class="d-flex flex-column position-relative product"
+                  data-code="sp001"
+                >
+                  <div class="position-relative product_img">
+                    <img src="./assets/images/product/Classico.png" alt="" />
+                    <button
+                      class="position-absolute product_icon"
+                      data-code="sp001"
+                    >
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="d-flex flex-column align-items-center product_price"
+                  >
+                    <h5 class="product_name">Classico</h5>
+                    <span class="w-100 d-flex product_reduce">
+                      <span>700.000đ</span>
+                    </span>
+                    <button class="text-center product-btn" data-code="sp001">
+                      THÊM VÀO GIỎ
+                    </button>
+                    <a
+                      href="#"
+                      class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                      >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-cell my-2">
+                <div
+                  class="d-flex flex-column position-relative product"
+                  data-code="sp004"
+                >
+                  <div class="position-relative product_img">
+                    <img src="./assets/images/product/Classico3.png" alt="" />
+                    <button
+                      class="position-absolute product_icon"
+                      data-code="sp004"
+                    >
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="d-flex flex-column align-items-center product_price"
+                  >
+                    <h5 class="product_name">Classico 3</h5>
+                    <span class="w-100 d-flex product_reduce">
+                      <span>700.000đ</span>
+                    </span>
+                    <button class="text-center product-btn" data-code="sp004">
+                      THÊM VÀO GIỎ
+                    </button>
+                    <a
+                      href="#"
+                      class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                      >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-cell my-2">
+                <div
+                  class="d-flex flex-column position-relative product"
+                  data-code="sp002"
+                >
+                  <div class="position-relative product_img">
+                    <img src="./assets/images/product/Classico1.png" alt="" />
+                    <button
+                      class="position-absolute product_icon"
+                      data-code="sp002"
+                    >
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="d-flex flex-column align-items-center product_price"
+                  >
+                    <h5 class="product_name">Classico 1</h5>
+                    <span class="w-100 d-flex product_reduce">
+                      <span>700.000đ</span>
+                    </span>
+                    <button class="text-center product-btn" data-code="sp002">
+                      THÊM VÀO GIỎ
+                    </button>
+                    <a
+                      href="#"
+                      class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                      >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-cell my-2">
+                <div
+                  class="d-flex flex-column position-relative product"
+                  data-code="sp003"
+                >
+                  <div class="position-relative product_img">
+                    <img src="./assets/images/product/Classico2.png" alt="" />
+                    <button
+                      class="position-absolute product_icon"
+                      data-code="sp003"
+                    >
+                      <i class="fa-solid fa-heart"></i>
+                    </button>
+                  </div>
+                  <div
+                    class="d-flex flex-column align-items-center product_price"
+                  >
+                    <h5 class="product_name">Classico 2</h5>
+                    <span class="w-100 d-flex product_reduce">
+                      <span>700.000đ</span>
+                    </span>
+                    <button class="text-center product-btn" data-code="sp003">
+                      THÊM VÀO GIỎ
+                    </button>
+                    <a
+                      href="#"
+                      class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                      >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                    ></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row body_body-group">
+          <div class="col-12 col-sm-12 col-md-6 my-4">
+            <div
+              class="position-relative d-flex align-items-start flex-column body_box justify-content-start overlay animated__loader animated__loader--bottom body_box--last"
+            >
+              <div
+                class="d-flex align-items-start flex-column position-relative home-content pt-5"
+              >
+                <h2>CỔ ĐIỂN</h2>
+                <p>Đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ…</p>
+              </div>
+              <span class="position-absolute w-100 h-100 home-bg__old"></span>
+            </div>
+          </div>
+          <div class="col-12 col-sm-12 col-md-6 my-4">
+            <div
+              class="position-relative d-flex align-items-start flex-column animated__loader animated__loader--top body_box justify-content-end overlay body_box--last"
+            >
+              <div
+                class="d-flex align-items-start flex-column position-relative home-content pb-4"
+              >
+                <h2>SMART WATCH</h2>
+                <p>Đa dạng về phong cách, kiểu dáng, màu sắc, kích cỡ…</p>
+              </div>
+              <span class="position-absolute w-100 h-100 home-bg__new"></span>
+            </div>
+          </div>
+        </div>
+        <div class="row product-animation--last">
+          <div class="col-12">
+            <ul class="product_category nav mt-5">
+              <li class="nav-item pr-4 product_title active">
+                <a href="#"><h3>Sản phẩm phổ biến</h3></a>
+              </li>
+              <li class="nav-item pr-4 product_title">
+                <a href="#"> <h3>Sản phẩm khuyến mãi</h3></a>
+              </li>
+              <li class="nav-item product_title">
+                <a href="#"><h3>Sản phẩm mới</h3></a>
+              </li>
+            </ul>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp015"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple10.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp015"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 10</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp015">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp014"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple9.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp014"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 9</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp014">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp013"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple8.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp013"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 8</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp013">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp012"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple7.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp012"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 7</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp012">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp011"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple6.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp011"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 6</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp011">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp010"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple5.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp010"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 5</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp010">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp009"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple4.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp009"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 4</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp009">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp008"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple3.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp008"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 3</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp008">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp007"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple2.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp007"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 2</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp007">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-6 col-sm-4 col-lg-3 px-2 px-sm-3 my-2 my-sm-3">
+            <div
+              class="d-flex flex-column position-relative product"
+              data-code="sp006"
+            >
+              <div class="position-relative product_img">
+                <img src="./assets/images/product/Simple1.jpg" alt="" />
+                <button
+                  class="position-absolute product_icon"
+                  data-code="sp006"
+                >
+                  <i class="fa-solid fa-heart"></i>
+                </button>
+              </div>
+              <div class="d-flex flex-column align-items-center product_price">
+                <h5 class="product_name">Simple 1</h5>
+                <span class="w-100 d-flex product_reduce">
+                  <span>700.000đ</span>
+                </span>
+                <button class="text-center product-btn" data-code="sp006">
+                  THÊM VÀO GIỎ
+                </button>
+                <a
+                  href="#"
+                  class="product-btn d-flex align-items-center justify-content-center text-nowrap text-uppercase product-btn--link add"
+                  >Xem giỏ hàng <i class="fa-solid fa-arrow-right-long"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row mt-4 group-banner">
+          <div class="col-12 col-sm-6 col-lg-4 my-4">
+            <div
+              class="position-relative animated__loader animated__loader--top panner_container"
+              data-id="bg001"
+            >
+              <div class="position-relative w-100 panner-img">
+                <img
+                  class="position-absolute w-100 h-100"
+                  src="./assets/images/blogs/blogs1.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="panner-content pt-3">
+                <h5>Chiếc đồng hồ của những CEO quyền lực nhất thế giới</h5>
+                <p>Chiếc đồng hồ của những CEO quyền lực nhất thế giới</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 my-4">
+            <div
+              class="position-relative animated__loader animated__loader--top panner_container"
+              data-id="bg002"
+            >
+              <div class="position-relative w-100 panner-img">
+                <img
+                  class="position-absolute w-100 h-100"
+                  src="./assets/images/blogs/blogs2.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="panner-content pt-3">
+                <h5>
+                  12 chiếc đồng hồ dành cho nữ giới đắt giá nhất mọi thời đại
+                </h5>
+                <p>
+                  Công nghiệp sản xuất đồng hồ sang trọng có dấu hiệu chững lại
+                  trong hai ...
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-sm-6 col-lg-4 my-4">
+            <div
+              class="position-relative animated__loader animated__loader--top panner_container"
+              data-id="bg003"
+            >
+              <div class="position-relative w-100 panner-img">
+                <img
+                  class="position-absolute w-100 h-100"
+                  src="./assets/images/blogs/blogs3.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="panner-content pt-3">
+                <h5>
+                  10 thương hiệu đồng hồ cao cấp hàng đầu mọi quý ông đều quan
+                  tâm, Rolex xếp hạng số 3
+                </h5>
+                <p>
+                  1. Audemars Piguet Được thành lập vào năm 1875 bởi Jules-Louis
+                  Audemars và Edward-Auguste Piguet, ...
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div class="container">
+        <div
+          class="row justify-content-between align-items-center footer_register"
+        >
+          <div class="col-12 col-md-6">
+            <div class="footer_content">
+              <h3>ĐĂNG KÝ NHẬN THÔNG TIN</h3>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="d-flex footer_enter">
+              <input type="email" placeholder="Email..." />
+              <button class="text-nowrap">ĐĂNG KÝ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_body">
+        <div class="container">
+          <div class="row py-5 tablet-center">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="footer_group">
+                <h3 class="footer_title">THÔNG TIN LIÊN HỆ</h3>
+                <p class="footer_box">
+                  <i class="fa-sharp fa-solid fa-location-dot"></i> 319 C16 Lý
+                  Thường Kiệt, Phường 15, Quận 11, Tp.HCM
+                </p>
+                <p class="footer_box">
+                  <i class="fa-solid fa-phone"></i>
+                  <a href="tel:+0945477411">0945477411</a>
+                </p>
+                <p class="footer_box">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                  <a href="mailto:vinhky26032002@gmail.com" target="_blank"
+                    >vinhky26032002@gmail.com</a
+                  >
+                </p>
+                <div class="d-flex align-items-center footer_xh">
+                  <button
+                    type="button"
+                    class="d-flex align-items-center justify-content-center footer_follow fb"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Follow on Facebook"
+                  >
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="d-flex align-items-center justify-content-center footer_follow ig"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Follow on Instagram"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="d-flex align-items-center justify-content-center footer_follow tw"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Follow on Twitter"
+                  >
+                    <i class="fa-brands fa-twitter"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="d-flex align-items-center justify-content-center footer_follow lk"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Follow on Linkedin"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mobile-top">
+              <div class="footer_group">
+                <h3 class="footer_title">LIÊN KẾT</h3>
+                <div class="d-flex flex-column footer_container">
+                  <a
+                    href="./components/gioithieu/gioithieu.html"
+                    class="footer_link"
+                    >Giới thiệu</a
+                  >
+                  <a
+                    href="./components/sanpham/donghonam.html"
+                    class="footer_link"
+                    >Đồng hồ nam</a
+                  >
+                  <a
+                    href="./components/sanpham/donghonu.html"
+                    class="footer_link"
+                    >Đồng hồ nữ</a
+                  >
+                  <a href="./components/blogs/blogs.html" class="footer_link"
+                    >Blogs</a
+                  >
+                  <a href="./components/lienhe/lienhe.html" class="footer_link"
+                    >Liên hệ</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 tablet-top mobile-top">
+              <div class="footer_group">
+                <h3 class="footer_title">HỖ TRỢ</h3>
+                <div class="d-flex flex-column footer_container">
+                  <a
+                    href="components/gioithieu/gioithieu.html"
+                    class="footer_link"
+                    >Hướng dẫn mua hàng</a
+                  >
+                  <a
+                    href="components/gioithieu/gioithieu.html"
+                    class="footer_link"
+                    >Hướng dẫn thanh toán</a
+                  >
+                  <a
+                    href="components/gioithieu/gioithieu.html"
+                    class="footer_link"
+                    >Chính sách bảo hành</a
+                  >
+                  <a
+                    href="components/gioithieu/gioithieu.html"
+                    class="footer_link"
+                    >Chính sách đổi trả</a
+                  >
+                  <a
+                    href="components/gioithieu/gioithieu.html"
+                    class="footer_link"
+                    >Tư vấn khách hàng</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row footer-bottom py-2">
+            <div class="col-sm-12 col-md-6">
+              <p class="footer-author">
+                &copy; thực hiện bởi nhóm
+                <a href="index.html" class="header-logo">facetoface</a>
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="row justify-content-end">
+                <img
+                  src="./assets/images/img-payment.png"
+                  class="footer-img"
+                  alt="img-payment"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+    <script src="assets/js/homepage.js"></script>
+    <script src="assets/js/header-fooer.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

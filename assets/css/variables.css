@@ -1,0 +1,10 @@
+:root {
+  --primary-color: #c89979;
+  --border-color: #ccc;
+  --white-color: #fff;
+  --black-color: #000;
+  --black-background: #333;
+  --white-background: #f1f1f1;
+  --shadow-black: rgba(0, 0, 0, 0);
+  --gray-color: #ddd;
+}

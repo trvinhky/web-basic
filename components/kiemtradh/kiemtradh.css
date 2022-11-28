@@ -1,0 +1,65 @@
+@import "../../assets/css/variables.css";
+
+.img-check {
+  height: auto;
+  margin-bottom: 30px;
+}
+
+.title {
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+
+.check {
+  margin-bottom: 20px;
+}
+
+.check p {
+  font-size: 1.1rem;
+}
+
+.input {
+  font-size: 1rem;
+  margin-bottom: 15px;
+}
+
+.input label {
+  margin-bottom: 5px;
+}
+
+.input-text {
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  font-size: 1.1rem;
+  background-color: var(--white-color);
+}
+
+.input-text:focus {
+  box-shadow: 0 1px 10px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.fowlow {
+  font-size: 1.2rem;
+  color: #fff;
+  border: none;
+  background: #c89979;
+  cursor: pointer;
+  padding: 8px 18px;
+}
+
+.fowlow:hover {
+  background: #a27150;
+}
+
+.check-text {
+  font-size: 0.8rem;
+}
+
+.check-text a {
+  color: #353535;
+}
+
+.check-text a:hover {
+  color: var(--black-color);
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/header-footer.css" />
+    <link rel="stylesheet" href="whishlist.css" />
+  </head>
+  <body>
+    <header id="header">
+      <div class="header-top hide-tablet">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="d-flex justify-content-between header-top__text">
+                <div class="d-flex header-top__left">
+                  <div class="d-flex align-items-center header-top__group">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <span>319 - C16 Lý Thường Kiệt, P.15, Q.11, Tp.HCM</span>
+                  </div>
+                  <div class="d-flex align-items-center header-top__group">
+                    <i class="fa-solid fa-phone"></i>
+                    <a class="header-phone" href="tel:+0947468740"
+                      >0947468740</a
+                    >
+                  </div>
+                </div>
+                <div class="header-top__right">
+                  <a
+                    class="d-inline-block"
+                    href="#"
+                    target="_blank"
+                    title="follow on facebook"
+                    rel="noopener noreferrer"
+                    ><i class="fa-brands fa-facebook-f"></i
+                  ></a>
+                  <a
+                    class="d-inline-block"
+                    href="#"
+                    target="_blank"
+                    title="follow on instagram"
+                    rel="noopener noreferrer"
+                  >
+                    <i class="fa-brands fa-instagram"></i
+                  ></a>
+                  <a
+                    class="d-inline-block"
+                    href="#"
+                    target="_blank"
+                    title="follow on twitter"
+                    rel="noopener noreferrer"
+                    ><i class="fa-brands fa-twitter"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-center">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div
+                class="d-flex justify-content-between align-items-center header-center__box"
+              >
+                <button class="header-nav__list">
+                  <i class="fa-solid fa-bars"></i>
+                </button>
+                <a href="../../index.html" class="header-center__logo">
+                  FaceToFace
+                </a>
+                <div
+                  class="position-relative d-flex header-center__group hide-tablet"
+                >
+                  <input type="text" placeholder="Tìm kiếm..." class="search" />
+                  <button>
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </button>
+                  <ul
+                    class="position-absolute w-100 header-list__search d-none"
+                  ></ul>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-center header-center__icons"
+                >
+                  <button
+                    class="position-relative header-center__user hide-tablet"
+                  >
+                    <i class="fa-solid fa-user"></i>
+                    <div class="position-absolute header-center__list">
+                      <a
+                        class="d-inline-block text-nowrap w-100 header-center__item"
+                        href="../login/dangnhap.html"
+                        >Đăng Nhập</a
+                      >
+                      <a
+                        class="d-inline-block text-nowrap w-100 header-center__item"
+                        href="../register/dangky.html"
+                        >Đăng Ký</a
+                      >
+                      <a
+                        class="d-inline-block text-nowrap w-100 header-center__item"
+                        href="../user/user.html"
+                        >Thông Tin Người Dùng</a
+                      >
+                      <span
+                        id="header-logout"
+                        class="d-inline-block text-nowrap w-100 header-center__item"
+                        >Đăng Xuất</span
+                      >
+                    </div>
+                  </button>
+                  <a
+                    class="position-relative header-center__heart hide-tablet"
+                    href="whishlist.html"
+                  >
+                    <i class="fa-solid fa-heart"></i>
+                    <span
+                      class="position-absolute d-none align-items-center justify-content-center count-like"
+                      >0</span
+                    >
+                  </a>
+                  <div class="position-relative header-group">
+                    <a
+                      class="d-flex position-relative justify-content-center header-center__cart"
+                      href="../giohang/giohang.html"
+                      title="giỏ hàng"
+                    >
+                      <span class="position-relative text-center header-count"
+                        >0</span
+                      >
+                    </a>
+                    <div
+                      class="position-absolute header-center__show hide-tablet"
+                    >
+                      <span class="d-inline-block text-left header-list__empty"
+                        >Chưa có sản phẩm trong giỏ hàng</span
+                      >
+                      <div class="header-cart__box d-none">
+                        <ul class="header-cart__list"></ul>
+                        <div class="header-cart__total">
+                          Tổng phụ: <span>1,000,000đ</span>
+                        </div>
+                        <div class="header-cart__btn">
+                          <a
+                            href="../giohang/giohang.html"
+                            class="text-center d-inline-block"
+                            >Xem Giỏ Hàng</a
+                          >
+                          <a
+                            href="../thanhtoan/thanhtoan.html"
+                            class="text-center d-inline-block mt-2"
+                            >Thanh Toán</a
+                          >
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-bottom hide-tablet">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <nav class="header-nav">
+                <ul class="nav justify-content-center">
+                  <li class="nav-item">
+                    <a href="../../index.html" class="text-uppercase nav-link"
+                      >Trang Chủ</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="../gioithieu/gioithieu.html"
+                      class="text-uppercase nav-link"
+                      >Giới Thiệu</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="../sanpham/donghonam.html"
+                      class="text-uppercase nav-link"
+                      >Đồng Hồ Nam</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="../sanpham/donghonu.html"
+                      class="text-uppercase nav-link"
+                      >Đồng Hồ Nữ</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="../blogs/blogs.html"
+                      class="text-uppercase nav-link"
+                      >Blogs</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      href="../lienhe/lienhe.html"
+                      class="text-uppercase nav-link"
+                      >Liên Hệ</a
+                    >
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="position-fixed h-100 tablet-nav">
+        <div class="position-relative d-flex header-center__group">
+          <input type="text" placeholder="Tìm kiếm..." class="search" />
+          <button>
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+          <ul class="position-absolute w-100 header-list__search d-none"></ul>
+        </div>
+        <nav class="nav flex-column nav-mobile">
+          <a class="nav-link active" href="../../index.html">Trang Chủ</a>
+          <a class="nav-link" href="../gioithieu/gioithieu.html">Giới Thiệu</a>
+          <a class="nav-link" href="../sanpham/donghonam.html">Đồng Hồ Nam</a>
+          <a class="nav-link" href="../sanpham/donghonu.html">Đồng Hồ Nữ</a>
+          <a class="nav-link" href="../blogs/blogs.html">Blogs</a>
+          <a class="nav-link" href="../lienhe/lienhe.html">Liên Hệ</a>
+        </nav>
+        <div class="d-flex align-items-center tablet-icons">
+          <a href=""><i class="fa-brands fa-facebook-f"></i></a>
+          <a href=""><i class="fa-brands fa-instagram"></i></a>
+          <a href=""><i class="fa-brands fa-twitter"></i></a>
+        </div>
+      </div>
+      <div class="position-fixed w-100 h-100 tablet-overlay">
+        <i class="position-absolute fa-solid fa-xmark"></i>
+      </div>
+    </header>
+    <main id="whish-list">
+      <section class="container">
+        <div class="row">
+          <div class="col">
+            <h1 class="whish-list__title">Sản phẩm yêu thích</h1>
+            <table class="table d-none d-sm-table">
+              <thead class="thead-dark">
+                <tr>
+                  <th></th>
+                  <th scope="col">Hình Ảnh</th>
+                  <th scope="col">Thông Tin</th>
+                  <th scope="col">Tình Trạng Kho</th>
+                  <th scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="whish-content"></tbody>
+            </table>
+            <ul class="whish-list__like d-block d-sm-none"></ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer id="footer">
+      <div class="container">
+        <div
+          class="row justify-content-between align-items-center footer_register"
+        >
+          <div class="col-12 col-md-6">
+            <div class="footer_content">
+              <h3>ĐĂNG KÝ NHẬN THÔNG TIN</h3>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="d-flex footer_enter">
+              <input type="email" placeholder="Email..." />
+              <button class="text-nowrap">ĐĂNG KÝ</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer_body">
+        <div class="container">
+          <div class="row py-5 tablet-center">
+            <div class="col-12 col-sm-6 col-md-4">
+              <div class="footer_group">
+                <h3 class="footer_title">THÔNG TIN LIÊN HỆ</h3>
+                <p class="footer_box">
+                  <i class="fa-sharp fa-solid fa-location-dot"></i> 319 C16 Lý
+                  Thường Kiệt, Phường 15, Quận 11, Tp.HCM
+                </p>
+                <p class="footer_box">
+                  <i class="fa-solid fa-phone"></i>
+                  <a href="tel:+0945477411">0945477411</a>
+                </p>
+                <p class="footer_box">
+                  <i class="fa-solid fa-envelope-open-text"></i>
+                  <a href="mailto:vinhky26032002@gmail.com" target="_blank"
+                    >vinhky26032002@gmail.com</a
+                  >
+                </p>
+                <div class="d-flex align-items-center footer_xh">
+                  <button
+                    type="button"
+                    class="d-flex align-items-center justify-content-center footer_follow fb"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Follow on Facebook"
+                  >
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="d-flex align-items-center justify-content-center footer_follow ig"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Follow on Instagram"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="d-flex align-items-center justify-content-center footer_follow tw"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Follow on Twitter"
+                  >
+                    <i class="fa-brands fa-twitter"></i>
+                  </button>
+                  <button
+                    type="button"
+                    class="d-flex align-items-center justify-content-center footer_follow lk"
+                    data-toggle="tooltip"
+                    data-placement="top"
+                    title="Follow on Linkedin"
+                  >
+                    <i class="fa-brands fa-linkedin"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mobile-top">
+              <div class="footer_group">
+                <h3 class="footer_title">LIÊN KẾT</h3>
+                <div class="d-flex flex-column footer_container">
+                  <a href="../gioithieu/gioithieu.html" class="footer_link"
+                    >Giới thiệu</a
+                  >
+                  <a href="../sanpham/donghonam.html" class="footer_link"
+                    >Đồng hồ nam</a
+                  >
+                  <a href="../sanpham/donghonu.html" class="footer_link"
+                    >Đồng hồ nữ</a
+                  >
+                  <a href="../blogs/blogs.html" class="footer_link">Blogs</a>
+                  <a href="../lienhe/lienhe.html" class="footer_link"
+                    >Liên hệ</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 tablet-top mobile-top">
+              <div class="footer_group">
+                <h3 class="footer_title">HỖ TRỢ</h3>
+                <div class="d-flex flex-column footer_container">
+                  <a href="../gioithieu/gioithieu.html" class="footer_link"
+                    >Hướng dẫn mua hàng</a
+                  >
+                  <a href="../gioithieu/gioithieu.html" class="footer_link"
+                    >Hướng dẫn thanh toán</a
+                  >
+                  <a href="../gioithieu/gioithieu.html" class="footer_link"
+                    >Chính sách bảo hành</a
+                  >
+                  <a href="../gioithieu/gioithieu.html" class="footer_link"
+                    >Chính sách đổi trả</a
+                  >
+                  <a href="../gioithieu/gioithieu.html" class="footer_link"
+                    >Tư vấn khách hàng</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row footer-bottom py-2">
+            <div class="col-sm-12 col-md-6">
+              <p class="footer-author">
+                &copy; thực hiện bởi nhóm
+                <a href="../../index.html" class="header-logo">facetoface</a>
+              </p>
+            </div>
+            <div class="col-sm-12 col-md-6">
+              <div class="row justify-content-end">
+                <img
+                  src="../../assets/images/img-payment.png"
+                  class="footer-img"
+                  alt="img-payment"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../../assets/js/product.js"></script>
+    <script src="../../assets/js/header-fooer.js"></script>
+    <script src="whishlist.js"></script>
+  </body>
+</html>

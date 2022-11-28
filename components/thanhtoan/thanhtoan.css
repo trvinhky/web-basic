@@ -1,0 +1,204 @@
+@import "../../assets/css/variables.css";
+
+#pay {
+  font-size: 1.1rem;
+}
+
+#pay input[type="text"]:focus {
+  outline: none;
+}
+
+.text {
+  color: var(--black-color);
+}
+
+.text span {
+  font-weight: 600;
+}
+
+.text a {
+  font-weight: 500;
+  text-decoration: none;
+  color: #334862;
+}
+
+.text a:hover {
+  color: var(--black-color);
+}
+
+#pay-collapse {
+  border: 2px dashed var(--primary-color);
+  color: #53657b;
+}
+
+.pay-collapse__group {
+  padding: 15px 30px 30px;
+}
+
+.formp {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 576px) {
+  .coupon {
+    flex-direction: column;
+  }
+
+  .input-text {
+    margin-bottom: 10px;
+  }
+}
+
+.input-text {
+  flex: 1;
+  background-color: var(--white-color);
+  border: 1px solid var(--gray-color);
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+  font-size: 1.1rem;
+  padding: 5px 12px;
+}
+
+.input-text:hover {
+  box-shadow: none;
+}
+
+.pay-input label {
+  font-weight: 600;
+}
+
+.pay-input input:focus,
+.pay-input textarea:focus {
+  box-shadow: 0 0 5px #ccc;
+  border: none;
+}
+
+.apply-btn {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+  border-radius: 0;
+  border: none;
+  padding: 6px 14px;
+  cursor: pointer;
+}
+
+.apply-btn:hover {
+  color: var(--white-color);
+  background-color: #a57f69;
+}
+
+.title {
+  border-top: 2px solid var(--gray-color);
+}
+
+.pay-title {
+  font-size: 1.2rem;
+  padding-top: 10px;
+  font-weight: 700;
+}
+
+.checkout {
+  border: 2px solid var(--primary-color);
+  color: #353535;
+  padding: 15px 30px 30px;
+}
+
+.checkout .pay-title {
+  padding-top: 0;
+}
+
+.order-table {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.order-table th {
+  font-size: 1rem;
+}
+
+.order-table tbody,
+.order-table tfoot {
+  font-size: 13px;
+}
+
+.order-name {
+  letter-spacing: 1px;
+}
+
+.order-total {
+  letter-spacing: 1px;
+}
+
+.order-total span {
+  font-weight: 700;
+  color: #353535;
+}
+
+.checkout th,
+.checkout td {
+  padding: 10px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.order-item th {
+  color: #666;
+  padding: 15px 0;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.order-name-foot th {
+  text-transform: none;
+}
+
+.order-ship th {
+  color: #666;
+  text-transform: none;
+}
+
+.order-ship td span {
+  color: #666;
+  font-weight: normal;
+  text-transform: none;
+}
+
+.order-table .order-sum th,
+td {
+  border-width: 2px;
+}
+
+.order-sum th {
+  text-transform: none;
+}
+
+.pay-box {
+  display: flex;
+}
+
+input[type="radio"] {
+  margin-right: 10px;
+  font-size: 1.2rem;
+}
+
+.pay-label {
+  color: #333;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin: 0;
+}
+
+.pay-hide p {
+  font-size: 1rem;
+  margin-bottom: 8px;
+}
+
+#pay .nav {
+  margin-bottom: 20px;
+}
+
+.pay-transfer {
+  border-color: #ececec;
+  border-style: solid none none;
+  border-width: 1px 0px 0px;
+}

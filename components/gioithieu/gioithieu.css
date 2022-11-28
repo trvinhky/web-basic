@@ -1,0 +1,103 @@
+@import "../../assets/css/variables.css";
+
+#content {
+  margin-top: 40px;
+}
+
+.animated__loader {
+  opacity: 0;
+  transition: transform 1.6s, opacity 0.7s ease-in;
+}
+
+.animated__loader--left {
+  transform: translate3d(-70px, 0, 0);
+}
+
+.animated__loader--right {
+  transform: translate3d(70px, 0, 0);
+}
+
+.introduce {
+  margin-top: 30px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.introduce p {
+  font-size: 1rem;
+}
+
+.group i {
+  font-size: 3rem;
+}
+
+.box {
+  margin-left: 20px;
+}
+
+.title-box {
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+.text {
+  font-size: 1rem;
+}
+
+.round {
+  background-image: url("../../assets/images/gioithieu/gioithieu_backround.jpg");
+  background-attachment: fixed;
+  background-position: 0% 45%;
+  margin: 60px 0;
+  padding: 40px 0;
+}
+
+.round::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.num {
+  margin: 30px 0;
+  color: var(--white-color);
+  z-index: 1;
+}
+
+.big-num {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.small {
+  font-size: 1.2rem;
+}
+
+.avatar {
+  margin: 15px 0;
+  transform: perspective(400px) rotate3d(0, 1, 0, -90deg)
+    translate3d(15px, 0, 0);
+}
+
+.img-avatar {
+  height: 100px;
+  width: 100px;
+  margin-bottom: 20px;
+}
+
+.text-avatar {
+  font-size: 1rem;
+}
+
+.name-avatar {
+  font-size: 1.2rem;
+  font-weight: 700;
+}

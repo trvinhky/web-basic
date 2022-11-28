@@ -1,0 +1,273 @@
+main.cart {
+  font-size: 1rem;
+}
+
+.group-table {
+  max-height: 400px;
+  overflow-y: auto;
+  padding: 0 10px;
+}
+
+.bang {
+  width: 100%;
+}
+
+.table_header {
+  width: 100%;
+  border-bottom: 3px solid #ececec;
+}
+
+.sp {
+  padding: 7px 7px 7px 0;
+}
+
+.pd7px {
+  padding: 7px;
+}
+
+.total {
+  text-align: right;
+  padding: 7px 0 7px 7px;
+}
+
+.table_body {
+  border-bottom: 1px solid #ececec;
+}
+
+.sanpham {
+  display: flex;
+  align-items: center;
+}
+
+.remove {
+  width: 25px;
+  height: 25px;
+  text-align: center;
+  font-size: 1rem;
+  border: 2px solid red;
+  color: red;
+  border-radius: 50%;
+}
+
+.remove:hover {
+  color: #000;
+  border: 2px solid #000;
+  cursor: pointer;
+}
+
+.img img {
+  max-width: 76px;
+  padding: 15px 7px;
+}
+
+.name {
+  color: #446084;
+  padding: 15px 7px;
+}
+
+.name:hover {
+  color: #111;
+  cursor: pointer;
+}
+
+.price {
+  font-weight: 700;
+  color: #111;
+  padding: 15px 7px;
+}
+
+.quantity {
+  height: 36px;
+  margin-right: 20px;
+}
+
+.quantity-text {
+  width: 36px;
+  color: #333333;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+  -webkit-appearance: textfield;
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+.quantity-text:hover {
+  box-shadow: none;
+}
+
+.quantity-text:focus {
+  outline: none;
+}
+
+.quantity-text::-webkit-inner-spin-button,
+.quantity-text::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.quantity-plus {
+  padding: 0 8px;
+  color: #666666;
+  background-color: #f9f9f9;
+  border: 1px solid #dddddd;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.quantity-plus:hover {
+  background-color: #ddd;
+}
+
+.quantity-plus:focus {
+  outline: none;
+}
+
+.price_total {
+  font-weight: 700;
+  color: #111;
+  padding: 15px 0 15px 7px;
+  text-align: right;
+}
+
+.baoquanhbtn {
+  padding: 15px 0 10px;
+}
+
+.seen {
+  border: 2px solid #c89979;
+  color: #c89979;
+  background-color: #fff;
+  font-weight: 550;
+  padding: 5px 16px;
+  margin-right: 13px;
+}
+
+.seen:hover {
+  color: #fff;
+  background-color: #c89979;
+  cursor: pointer;
+}
+
+.update {
+  border: 2px solid #c89979;
+  color: #fff;
+  background-color: #c89979;
+  font-weight: 550;
+  padding: 5px 16px;
+  opacity: 0.6;
+}
+
+.update:hover {
+  color: #c89979;
+  background-color: #fff;
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.right {
+  padding: 0 30px;
+  border-left: 1px solid #ececec;
+}
+
+.r_header {
+  width: 100%;
+  border-bottom: 3px solid #ececec;
+  padding: 7px 0;
+  font-weight: 700;
+  margin-bottom: 1em;
+}
+
+.t_total1 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #353535;
+  padding: 7px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.r_ship {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  opacity: 0.8;
+  border-bottom: 1px solid #ececec;
+  margin-top: 10px;
+}
+
+.r_shipleft {
+  font-size: 0.9rem;
+}
+
+.r_shipleft p {
+  margin-bottom: 6px;
+}
+
+.r_shipright {
+  text-align: right;
+  font-size: 0.9rem;
+}
+
+.r_shipright p {
+  margin-bottom: 6px;
+}
+
+.update_address {
+  cursor: pointer;
+}
+
+.b_total1 {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  border-bottom: 3px solid #ececec;
+  padding: 0.5em 0;
+}
+
+.pay {
+  margin: 1.5em 0;
+  width: 100%;
+  background-color: #d26e4b;
+  border: none;
+  color: #fff;
+  font-size: 0.97rem;
+  font-weight: 700;
+  padding: 0.5em 0;
+  cursor: pointer;
+}
+
+.endow {
+  padding-bottom: 10px;
+  border-bottom: 3px solid #ececec;
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 15px;
+}
+
+.endow i {
+  color: #808080;
+}
+
+.code {
+  width: 100%;
+  padding: 6px 12px;
+  box-shadow: inset 0 1px 2px rgb(0 0 0 / 10%);
+  border: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+
+.apply {
+  width: 100%;
+  color: #666;
+  border: 1px solid #ddd;
+  background-color: #f9f9f9;
+  padding: 5px 0;
+  margin-bottom: 15px;
+}
+
+.apply:hover {
+  cursor: pointer;
+  background-color: #ddd;
+}

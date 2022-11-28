@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css2?family=Fasthand&display=swap");
+@import "../../assets/css/variables.css";
+
+.titlepad {
+  padding: 20px 15px;
+}
+
+.box {
+  background-color: var(--primary-color);
+  margin-bottom: 80px;
+}
+
+.home {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white-color);
+}
+
+.bigbox-breadcrumb {
+  font-size: 1rem;
+  background-color: transparent;
+  margin-bottom: 0;
+}
+
+.homepages {
+  color: var(--white-color);
+  font-weight: 400;
+}
+
+.box .breadcrumb-item.active {
+  color: var(--white-color);
+  font-weight: 600;
+}
+
+.box .breadcrumb-item + .breadcrumb-item::before {
+  color: var(--white-color);
+}
+
+.homepages:hover {
+  color: var(--white-color);
+  text-decoration: none;
+}
+
+.bigbox-img {
+  max-width: 100%;
+  width: unset;
+  height: unset;
+}
+
+.test {
+  margin: 20px 0;
+}
+
+.content {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.content a {
+  font-size: 2rem;
+  font-family: "Fasthand", cursive;
+  color: #409c73;
+}
