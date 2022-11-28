@@ -3,6 +3,7 @@ const queryStr = location.search;
 const urlParams = new URLSearchParams(queryStr);
 const keyParams = urlParams.get("key");
 
+document.title = `Kết quả tìm kiếm cho "${keyParams}"`;
 $(".key-search").text(keyParams);
 
 // add event click navbar tablet, mobile of product

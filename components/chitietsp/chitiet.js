@@ -60,6 +60,7 @@ function initView() {
   const likes = JSON.parse(localStorage.getItem("likes"));
   addSrcForImgs($(".box-slide img"));
   addSrcForImgs($(".box-foot__imghide"));
+  document.title = objProduct[codeParams].name;
   $(".title .h1").text(objProduct[codeParams].name);
   $(".evaluate-h3 span").text(objProduct[codeParams].name);
   if (objProduct[codeParams].discount !== 0) {

@@ -101,6 +101,7 @@ function initViewDetailBlog() {
       break;
     }
   }
+  document.title = listBlogs[idxCurr].title[0];
   const div = createContentBlog(listBlogs[idxCurr]);
   $(".blog-right__top--content").html("");
   $(".blog-right__top--content").append(div);
