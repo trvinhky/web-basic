@@ -1,5 +1,9 @@
 @import "../../assets/css/variables.css";
 
+.render-product {
+  font-size: 1rem;
+}
+
 .text-limit {
   overflow: hidden;
   text-overflow: ellipsis;
