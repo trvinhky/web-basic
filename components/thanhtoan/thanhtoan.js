@@ -510,3 +510,7 @@ function initViewPay() {
 }
 
 initViewPay();
+
+$(document).ready(() => {
+  $(".loading-overlay").addClass("d-none");
+});

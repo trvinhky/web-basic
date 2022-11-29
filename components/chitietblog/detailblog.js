@@ -984,3 +984,7 @@ $(".box-link").click(function (e) {
 });
 
 initViewDetailBlog();
+
+$(document).ready(() => {
+  $(".loading-overlay").addClass("d-none");
+});

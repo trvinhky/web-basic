@@ -589,3 +589,7 @@ $(".update").click(() => {
 });
 
 initViewCartPage();
+
+$(document).ready(() => {
+  $(".loading-overlay").addClass("d-none");
+});

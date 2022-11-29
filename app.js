@@ -663,6 +663,7 @@ $(".panner_container").click(function () {
 $(document).ready(() => {
   let positionCurrent = $(window).scrollTop() + $(window).height();
   handleRenderView(positionCurrent);
+  $(".loading-overlay").addClass("d-none");
 });
 
 // render view when scroll page

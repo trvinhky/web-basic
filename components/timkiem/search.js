@@ -778,3 +778,7 @@ $(".nav-item5__link").click(function (e) {
 });
 
 initViewProductSearch();
+
+$(document).ready(() => {
+  $(".loading-overlay").addClass("d-none");
+});

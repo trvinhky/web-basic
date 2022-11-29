@@ -358,6 +358,10 @@ function initCartProduct() {
 
 initCartProduct();
 
+$(document).ready(() => {
+  $(".loading-overlay").addClass("d-none");
+});
+
 // get key search
 function getKeySearchData(keySearch, name) {
   let temp = name.substr(0, keySearch.length);

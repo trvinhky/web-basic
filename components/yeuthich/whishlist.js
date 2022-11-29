@@ -690,3 +690,7 @@ function initViewWhish() {
 }
 
 initViewWhish();
+
+$(document).ready(() => {
+  $(".loading-overlay").addClass("d-none");
+});

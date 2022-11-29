@@ -810,3 +810,7 @@ let boxAll = $(".box-all .carousel").flickity({
   contain: true,
   freeScroll: true,
 });
+
+$(document).ready(() => {
+  $(".loading-overlay").addClass("d-none");
+});

@@ -494,3 +494,7 @@ $(".account .nav-item").click(function () {
   $(this).addClass("active");
   $(contentCur).addClass("active");
 });
+
+$(document).ready(() => {
+  $(".loading-overlay").addClass("d-none");
+});

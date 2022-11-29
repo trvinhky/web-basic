@@ -544,6 +544,7 @@ function handleRenderView(positionCurrent) {
 $(document).ready(() => {
   let positionCurrent = $(window).scrollTop() + $(window).height();
   handleRenderView(positionCurrent);
+  $(".loading-overlay").addClass("d-none");
 });
 
 // handle event scroll window

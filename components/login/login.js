@@ -1,4 +1,4 @@
-$(window).ready(() => {
+$(document).ready(() => {
   // toggle type password
   $(".form-input i").click(function () {
     if ($(this).prev().attr("type") === "password") {
@@ -69,4 +69,6 @@ $(window).ready(() => {
       }
     }
   });
+
+  $(".loading-overlay").addClass("d-none");
 });
