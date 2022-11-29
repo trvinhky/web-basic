@@ -1,3 +1,157 @@
+const objProduct = {
+  sp001: {
+    name: "Classico",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Classico.png",
+    gender: 1,
+    date: "2013-09-04",
+    vote: 107,
+    likeCount: 50,
+  },
+  sp002: {
+    name: "Classico 1",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Classico1.png",
+    gender: 2,
+    date: "2014-03-05",
+    vote: 70,
+    likeCount: 49,
+  },
+  sp003: {
+    name: "Classico 2",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Classico2.png",
+    gender: 1,
+    date: "2015-03-26",
+    vote: 55,
+    likeCount: 53,
+  },
+  sp004: {
+    name: "Classico 3",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Classico3.png",
+    gender: 2,
+    date: "2020-11-20",
+    vote: 85,
+    likeCount: 70,
+  },
+  sp005: {
+    name: "Classico 4",
+    price: 700000,
+    discount: 0.29,
+    image: "../../assets/images/product/Classico4.png",
+    gender: 2,
+    date: "2021-02-14",
+    vote: 113,
+    likeCount: 79,
+  },
+  sp006: {
+    name: "Simple 1",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple1.jpg",
+    gender: 2,
+    date: "2019-04-02",
+    vote: 50,
+    likeCount: 47,
+  },
+  sp007: {
+    name: "Simple 2",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple2.jpg",
+    gender: 2,
+    date: "2019-04-20",
+    vote: 107,
+    likeCount: 83,
+  },
+  sp008: {
+    name: "Simple 3",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple3.jpg",
+    gender: 2,
+    date: "2020-02-09",
+    vote: 102,
+    likeCount: 90,
+  },
+  sp009: {
+    name: "Simple 4",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple4.jpg",
+    gender: 0,
+    date: "2020-02-10",
+    vote: 76,
+    likeCount: 63,
+  },
+  sp010: {
+    name: "Simple 5",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple5.jpg",
+    gender: 2,
+    date: "2020-03-26",
+    vote: 65,
+    likeCount: 51,
+  },
+  sp011: {
+    name: "Simple 6",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple6.jpg",
+    gender: 0,
+    date: "2020-03-30",
+    vote: 49,
+    likeCount: 53,
+  },
+  sp012: {
+    name: "Simple 7",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple7.jpg",
+    gender: 1,
+    date: "2020-09-01",
+    vote: 109,
+    likeCount: 101,
+  },
+  sp013: {
+    name: "Simple 8",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple8.jpg",
+    gender: 0,
+    date: "2021-01-01",
+    vote: 140,
+    likeCount: 111,
+  },
+  sp014: {
+    name: "Simple 9",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple9.jpg",
+    gender: 1,
+    date: "2021-04-17",
+    vote: 153,
+    likeCount: 149,
+  },
+  sp015: {
+    name: "Simple 10",
+    price: 700000,
+    discount: 0,
+    image: "../../assets/images/product/Simple10.jpg",
+    gender: 0,
+    date: "2022-03-30",
+    vote: 170,
+    likeCount: 90,
+  },
+};
+
+// header - footer
 const convertArr = Object.values($(".header-center__item"));
 const listChoose = convertArr.slice(0, convertArr.length - 2);
 
@@ -200,19 +354,20 @@ function initCartProduct() {
 
 initCartProduct();
 
+// get key search
+function getKeySearchData(keySearch, name) {
+  let temp = name.substr(0, keySearch.length);
+  const strReplace = `<strong>${temp}</strong>`;
+  return name.replace(temp, strReplace);
+}
+
 // create product search
-function createProductSearch(data) {
+function createProductSearch(data, keySearch) {
   const li = document.createElement("li");
   li.classList.add("header-list__item");
 
   const link = document.createElement("a");
-  let linkHref = "";
-  if (location.href.indexOf("index.html") !== -1) {
-    linkHref = `components/chitietsp/chitiet.html?code=${data.code}`;
-  } else {
-    linkHref = `../chitietsp/chitiet.html?code=${data.code}`;
-  }
-  link.href = linkHref;
+  link.href = `../chitietsp/chitiet.html?code=${data.code}`;
   link.className = "d-flex align-items-start header-list__link";
 
   const img = document.createElement("img");
@@ -225,7 +380,7 @@ function createProductSearch(data) {
 
   const h4 = document.createElement("h4");
   h4.classList.add("limit-text-2");
-  h4.innerText = data.name;
+  h4.innerHTML = getKeySearchData(keySearch, data.name);
   group.appendChild(h4);
 
   if (data.discount > 0) {
@@ -260,27 +415,28 @@ function createEmptySearch() {
 }
 
 // add event on change for input search
+let searchCount = 0;
+
 $(".search").on("keyup", function (e) {
   const arrObj = Object.entries(objProduct);
   const value = $(this).val();
   $(".header-list__search").removeClass("d-none");
   $(".header-list__search").html("");
-  let count = 0;
   if (value) {
     const valueSS = value.toLowerCase();
     arrObj.forEach((item) => {
       const nameSS = item[1].name.toLowerCase();
-      if (nameSS.indexOf(valueSS) !== -1) {
+      if (nameSS.startsWith(valueSS)) {
         const convertData = {
           ...item[1],
           code: item[0],
         };
-        ++count;
-        const li = createProductSearch(convertData);
+        ++searchCount;
+        const li = createProductSearch(convertData, valueSS);
         $(".header-list__search").append(li);
       }
     });
-    if (count < 1) {
+    if (searchCount < 1) {
       const li = createEmptySearch();
       $(".header-list__search").append(li);
     }
@@ -288,14 +444,15 @@ $(".search").on("keyup", function (e) {
     const li = createEmptySearch();
     $(".header-list__search").append(li);
   }
-  if (e.keyCode === 13 && count > 0) {
-    if (location.href.indexOf("index.html") !== -1) {
-      location.href = `components/timkiem/search.html?key=${value}`;
-    } else if (location.href.indexOf("search.html") !== -1) {
-      location.href = `search.html?key=${value}`;
-    } else {
-      location.href = `../timkiem/search.html?key=${value}`;
-    }
+  if (e.keyCode === 13 && searchCount > 0) {
+    location.href = `../timkiem/search.html?key=${value}`;
+  }
+});
+
+$(".header-center__group > button").click(function () {
+  const value = $(this).prev().val();
+  if (searchCount > 0) {
+    location.href = `../timkiem/search.html?key=${value}`;
   }
 });
 
