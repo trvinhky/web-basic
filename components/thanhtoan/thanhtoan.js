@@ -189,7 +189,8 @@ function handleInitCount() {
     $(".count-like").addClass("d-flex");
     $(".count-like").text(localLike.length);
   }
-  $(".header-count").text(localProduct.length > 0 ? localProduct.length : 0);
+  if (localProduct)
+    $(".header-count").text(localProduct.length > 0 ? localProduct.length : 0);
 }
 
 handleInitCount();
@@ -237,22 +238,24 @@ function handleRemoveProduct(code) {
   let data = JSON.parse(localStorage.getItem("carts"));
   let index = 0;
   let result = [];
-  for (let i = 0; i < data.length; ++i) {
-    if (data[i][0] === code) {
-      index = i;
-      break;
+  if (data) {
+    for (let i = 0; i < data.length; ++i) {
+      if (data[i][0] === code) {
+        index = i;
+        break;
+      }
     }
-  }
-  if (index === 0) {
-    data.shift();
-    result = data;
-  } else if (index === data.length - 1) {
-    data.pop();
-    result = data;
-  } else {
-    const arr1 = data.slice(0, index);
-    const arr2 = data.slice(index + 1);
-    result = [...arr1, ...arr2];
+    if (index === 0) {
+      data.shift();
+      result = data;
+    } else if (index === data.length - 1) {
+      data.pop();
+      result = data;
+    } else {
+      const arr1 = data.slice(0, index);
+      const arr2 = data.slice(index + 1);
+      result = [...arr1, ...arr2];
+    }
   }
   localStorage.setItem("carts", JSON.stringify(result));
   initCartProduct();
@@ -490,15 +493,17 @@ function initViewPay() {
   const dataLocal = JSON.parse(localStorage.getItem("carts"));
   let total = 0;
   $(".pay-product").html("");
-  for (let i = 0; i < dataLocal.length; ++i) {
-    const key = dataLocal[i][0];
-    const convertData = {
-      ...objProduct[key],
-      count: dataLocal[i][1],
-    };
-    total += convertData.price * convertData.count;
-    const tr = createProductPay(convertData);
-    $(".pay-product").append(tr);
+  if (dataLocal) {
+    for (let i = 0; i < dataLocal.length; ++i) {
+      const key = dataLocal[i][0];
+      const convertData = {
+        ...objProduct[key],
+        count: dataLocal[i][1],
+      };
+      total += convertData.price * convertData.count;
+      const tr = createProductPay(convertData);
+      $(".pay-product").append(tr);
+    }
   }
   $(".order-name-foot span").text(`${convertPrice(total)} ₫`);
   $(".order-sum span").text(`${convertPrice(total)} ₫`);

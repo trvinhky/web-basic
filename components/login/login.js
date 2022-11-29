@@ -15,11 +15,14 @@ $(window).ready(() => {
   let userObj = { email: "", password: "" };
   const data = JSON.parse(localStorage.getItem("listUsers"));
   const checkUser = (value, type) => {
-    for (let item of data) {
-      if (item[type] === value) {
-        userObj[type] = value;
-        return true;
+    if (data) {
+      for (let item of data) {
+        if (item[type] === value) {
+          userObj[type] = value;
+          return true;
+        }
       }
+      return false;
     }
     return false;
   };

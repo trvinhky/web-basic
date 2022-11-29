@@ -202,7 +202,9 @@ function handleInitCount() {
     $(".count-like").addClass("d-flex");
     $(".count-like").text(localLike.length);
   }
-  $(".header-count").text(localProduct.length > 0 ? localProduct.length : 0);
+  if (localProduct) {
+    $(".header-count").text(localProduct.length > 0 ? localProduct.length : 0);
+  }
 }
 
 handleInitCount();
@@ -250,22 +252,24 @@ function handleRemoveProduct(code) {
   let data = JSON.parse(localStorage.getItem("carts"));
   let index = 0;
   let result = [];
-  for (let i = 0; i < data.length; ++i) {
-    if (data[i][0] === code) {
-      index = i;
-      break;
+  if (data) {
+    for (let i = 0; i < data.length; ++i) {
+      if (data[i][0] === code) {
+        index = i;
+        break;
+      }
     }
-  }
-  if (index === 0) {
-    data.shift();
-    result = data;
-  } else if (index === data.length - 1) {
-    data.pop();
-    result = data;
-  } else {
-    const arr1 = data.slice(0, index);
-    const arr2 = data.slice(index + 1);
-    result = [...arr1, ...arr2];
+    if (index === 0) {
+      data.shift();
+      result = data;
+    } else if (index === data.length - 1) {
+      data.pop();
+      result = data;
+    } else {
+      const arr1 = data.slice(0, index);
+      const arr2 = data.slice(index + 1);
+      result = [...arr1, ...arr2];
+    }
   }
   localStorage.setItem("carts", JSON.stringify(result));
   initCartProduct();
@@ -505,6 +509,7 @@ function addSrcForImgs(sel) {
 // check like local
 function checkLocalHeart(code) {
   const likes = JSON.parse(localStorage.getItem("likes"));
+  if (!likes) return false;
   return likes.indexOf(code) !== -1 ? true : false;
 }
 
@@ -535,7 +540,7 @@ function initView() {
     $(".price-old").text(`${convertPrice(500000)}₫`);
   }
   $(".price-new").text(`${convertPrice(objProduct[codeParams].price)}₫`);
-  if (likes.indexOf(codeParams) !== -1) {
+  if (likes && likes.indexOf(codeParams) !== -1) {
     $(".btn-like").addClass("active");
     $(".load-like").addClass("active");
   }
@@ -543,7 +548,9 @@ function initView() {
     $(".load-like").addClass("active");
     $(".btn-like").addClass("active");
   }
-  renderViewHeart(likes);
+  if (likes) {
+    renderViewHeart(likes);
+  }
   const gender = objProduct[codeParams].gender;
   if (gender === 0) {
     $(".breadcrumb-item--link a").text("Đồng hồ nữ");
@@ -563,30 +570,32 @@ initView();
 // handle event click button add count of product
 $(".option .btn-add").click(() => {
   let localProduct = JSON.parse(localStorage.getItem("carts"));
-  const index = localProduct.findIndex((item) => item[0] === codeParams);
-  const value = +$(".quantity-text").val();
-  const lenList = localProduct.length;
-  const item = [codeParams, value];
-  let result = [];
-  if (value > 0) {
-    if (index !== -1) {
-      if (index === 0) {
-        localProduct.shift();
-        result = [item, ...localProduct];
-      } else if (index === lenList - 1) {
-        localProduct.pop();
-        result = [...localProduct, item];
+  if (localProduct) {
+    const index = localProduct.findIndex((item) => item[0] === codeParams);
+    const value = +$(".quantity-text").val();
+    const lenList = localProduct.length;
+    const item = [codeParams, value];
+    let result = [];
+    if (value > 0) {
+      if (index !== -1) {
+        if (index === 0) {
+          localProduct.shift();
+          result = [item, ...localProduct];
+        } else if (index === lenList - 1) {
+          localProduct.pop();
+          result = [...localProduct, item];
+        } else {
+          const arr1 = localProduct.slice(0, index);
+          const arr2 = localProduct.slice(index + 1);
+          result = [...arr1, item, ...arr2];
+        }
       } else {
-        const arr1 = localProduct.slice(0, index);
-        const arr2 = localProduct.slice(index + 1);
-        result = [...arr1, item, ...arr2];
+        result = [...localProduct, item];
       }
-    } else {
-      result = [...localProduct, item];
+      localStorage.setItem("carts", JSON.stringify(result));
+      handleViewCount(".header-count", "carts");
+      initCartProduct();
     }
-    localStorage.setItem("carts", JSON.stringify(result));
-    handleViewCount(".header-count", "carts");
-    initCartProduct();
   }
   $(".quantity-text").val(1);
 });
@@ -640,7 +649,9 @@ function setLocalItems(localName, item, code) {
 // set number of heart in header
 function handleViewCount(sel, name) {
   const localArr = JSON.parse(localStorage.getItem(name));
-  $(sel).text(localArr.length);
+  if (localArr) {
+    $(sel).text(localArr.length);
+  }
 }
 
 // handle event click button heart
@@ -654,18 +665,20 @@ function handleAddLiked(event, code, _this) {
 // remove array likes in local
 function removeLocalLike(code) {
   const likes = JSON.parse(localStorage.getItem("likes"));
-  const len = likes.length;
-  const idx = likes.indexOf(code);
-  let results = [];
-  if (idx !== -1) {
-    if (idx === 0) {
-      results = likes.shift() && likes;
-    } else if (idx === len - 1) {
-      results = likes.pop() && likes;
-    } else {
-      results = [...likes.slice(0, idx), ...likes.slice(idx + 1)];
+  if (likes) {
+    const len = likes.length;
+    const idx = likes.indexOf(code);
+    let results = [];
+    if (idx !== -1) {
+      if (idx === 0) {
+        results = likes.shift() && likes;
+      } else if (idx === len - 1) {
+        results = likes.pop() && likes;
+      } else {
+        results = [...likes.slice(0, idx), ...likes.slice(idx + 1)];
+      }
+      localStorage.setItem("likes", JSON.stringify(results));
     }
-    localStorage.setItem("likes", JSON.stringify(results));
   }
 }
 
