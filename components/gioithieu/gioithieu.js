@@ -547,14 +547,23 @@ $(document).ready(() => {
   $(".loading-overlay").addClass("d-none");
 });
 
+function toggleClassScroll(pos, className) {
+  if (pos > 100) {
+    $(className).addClass("scroll");
+  } else {
+    $(className).removeClass("scroll");
+  }
+}
+
 // handle event scroll window
 $(window).on("scroll", () => {
-  if ($(window).scrollTop() > 100) {
-    $(".header-bottom").addClass("scroll");
+  const pos = $(window).scrollTop();
+  if ($(window).width() < 820) {
+    toggleClassScroll(pos, ".header-center__box");
   } else {
-    $(".header-bottom").removeClass("scroll");
+    toggleClassScroll(pos, ".header-bottom");
   }
-  let positionCurrent = $(window).scrollTop() + $(window).height();
+  let positionCurrent = pos + $(window).height();
   handleRenderView(positionCurrent);
   if (
     positionCurrent >= $(document).height() - 50 &&

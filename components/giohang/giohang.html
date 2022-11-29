@@ -262,8 +262,8 @@
     <main class="cart my-5">
       <div class="container">
         <div class="row">
-          <div class="col-12 col-sm-6 col-lg-7">
-            <div class="group-table">
+          <div class="col-sm-12 col-lg-7">
+            <div class="group-table d-none d-sm-block">
               <table class="bang">
                 <thead>
                   <tr class="table_header">
@@ -276,12 +276,18 @@
                 <tbody class="product-cart"></tbody>
               </table>
             </div>
+            <div class="group-table d-block d-sm-none">
+              <h1 class="text-uppercase mb-3 list-product-title">
+                Danh sách sản phẩm đã đặt
+              </h1>
+              <ul class="list-product-cart"></ul>
+            </div>
             <div class="baoquanhbtn">
               <button class="seen my-2">← Tiếp tục xem sản phẩm</button>
               <button class="update my-2">Cập nhật giỏ hàng</button>
             </div>
           </div>
-          <div class="col-12 col-sm-6 col-lg-5">
+          <div class="col-sm-12 col-lg-5">
             <div class="right">
               <div class="r_header">TỔNG SỐ LƯỢNG</div>
               <div class="t_total1">

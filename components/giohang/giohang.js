@@ -460,12 +460,21 @@ $(".header-center__group > button").click(function () {
   }
 });
 
+function toggleClassScroll(pos, className) {
+  if (pos > 100) {
+    $(className).addClass("scroll");
+  } else {
+    $(className).removeClass("scroll");
+  }
+}
+
 // handle event scroll window for navabar
 $(window).on("scroll", () => {
-  if ($(window).scrollTop() > 100) {
-    $(".header-bottom").addClass("scroll");
+  const pos = $(window).scrollTop();
+  if ($(window).width() < 820) {
+    toggleClassScroll(pos, ".header-center__box");
   } else {
-    $(".header-bottom").removeClass("scroll");
+    toggleClassScroll(pos, ".header-bottom");
   }
 });
 
@@ -478,7 +487,7 @@ $(".seen").click(() => (location.href = "../sanpham/dongho.html"));
 $(".pay").click(() => (location.href = "../thanhtoan/thanhtoan.html"));
 
 // create product cart page
-function createProductCart(data) {
+function createProductCartPage(data) {
   const tr = document.createElement("tr");
   tr.classList.add("table_body");
 
@@ -503,7 +512,7 @@ function createProductCart(data) {
   groupImg.appendChild(img);
   col1.appendChild(groupImg);
 
-  const title = document.createElement("div");
+  const title = document.createElement("h4");
   title.classList.add("name");
   title.innerText = data.name;
   col1.appendChild(title);
@@ -520,11 +529,6 @@ function createProductCart(data) {
   const groupInput = document.createElement("div");
   groupInput.className = "d-flex quantity";
 
-  const btnFirst = document.createElement("button");
-  btnFirst.className = "text-center quantity-plus";
-  btnFirst.innerText = "-";
-  groupInput.appendChild(btnFirst);
-
   const input = document.createElement("input");
   input.type = "number";
   input.className = "text-center quantity-text";
@@ -533,11 +537,6 @@ function createProductCart(data) {
   input.setAttribute("max", "999");
   input.setAttribute("title", "SL");
   groupInput.appendChild(input);
-
-  const btnLast = document.createElement("button");
-  btnLast.className = "text-center quantity-plus";
-  btnLast.innerText = "+";
-  groupInput.appendChild(btnLast);
   col3.appendChild(groupInput);
   tr.appendChild(col3);
 
@@ -550,11 +549,77 @@ function createProductCart(data) {
   return tr;
 }
 
+function createProductCartMobile(data) {
+  const li = document.createElement("li");
+  li.className = "d-flex list-product-item";
+
+  const remove = document.createElement("span");
+  remove.className = "d-flex align-items-center justify-content-center remove";
+  remove.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+  remove.onclick = function () {
+    handleRemoveProduct(data.code);
+    initViewCartPage();
+  };
+  li.appendChild(remove);
+
+  const groupImg = document.createElement("div");
+  groupImg.classList.add("img");
+
+  const img = document.createElement("img");
+  img.src = data.image;
+  img.alt = data.name;
+  groupImg.appendChild(img);
+  li.appendChild(groupImg);
+
+  const text = document.createElement("div");
+  text.classList.add("list-product-text");
+
+  const title = document.createElement("h4");
+  title.classList.add("name");
+  title.innerText = data.name;
+  text.appendChild(title);
+
+  const groupPrice = document.createElement("div");
+  groupPrice.className =
+    "d-flex align-items-center justify-content-end list-product-count";
+
+  const tagPrice = document.createElement("span");
+  tagPrice.classList.add("list-product-price");
+  const price = data.discount > 0 ? 500000 : data.price;
+  tagPrice.innerHTML = `<span> ${convertPrice(price)}đ</span>`;
+  groupPrice.appendChild(tagPrice);
+
+  const groupInput = document.createElement("div");
+  groupInput.className = "d-flex quantity";
+
+  const input = document.createElement("input");
+  input.type = "number";
+  input.className = "text-center quantity-text";
+  input.setAttribute("value", data.count);
+  input.setAttribute("min", "1");
+  input.setAttribute("max", "999");
+  input.setAttribute("title", "SL");
+  groupInput.appendChild(input);
+  groupPrice.appendChild(groupInput);
+  text.appendChild(groupPrice);
+
+  const sum = document.createElement("p");
+  sum.classList.add("list-product-sum");
+  sum.innerHTML = `Tổng: <span class="list-product-price">${convertPrice(
+    price * data.count
+  )}đ</span>`;
+  text.appendChild(sum);
+  li.appendChild(text);
+
+  return li;
+}
+
 // init view cart page
 function initViewCartPage() {
   const dataLocal = JSON.parse(localStorage.getItem("carts"));
   let total = 0;
   $(".product-cart").html("");
+  $(".list-product-cart").html("");
   if (dataLocal) {
     for (let i = 0; i < dataLocal.length; ++i) {
       const key = dataLocal[i][0];
@@ -563,8 +628,10 @@ function initViewCartPage() {
         count: dataLocal[i][1],
       };
       total += convertData.price * convertData.count;
-      const tr = createProductCart(convertData);
+      const tr = createProductCartPage(convertData);
       $(".product-cart").append(tr);
+      const li = createProductCartMobile(convertData);
+      $(".list-product-cart").append(li);
     }
   }
   $(".total-sup").text(`${convertPrice(total)} ₫`);
